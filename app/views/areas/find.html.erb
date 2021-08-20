@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="area.css">
+    <title>旅めし</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1 class="title">旅めし</h1>
+      </div>
+      <div class="navbar">
+        <ul class="nav-lists">
+          <li>ログイン</li>
+          <li>ログアウト</li>
+        </ul>
+      </div>
+    </header>
+   <div class="area">
+        <h2>エリア</h2>
+        <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <li class="item">
+           <%= link_to image_tag("thai.jpg", class:"btn"), "#" %>
+              <span>アジア</span>
+          </a> 
+        </li>
+        </div>
+        <div class="col-sm-4">
+          <li class="item">
+            <a href="#">
+              <%= image_tag "chaina.jpg" %>
+                <span>中国</span>
+            </a> 
+        </li>
+        </div>
+        <div class="col-sm-4">
+          <li class="item">
+            <a href="#">
+              <%= image_tag "spain.jpg" %>
+                <span>ヨーロッパ</span>
+            </a> 
+        </li>
+        </div>
+        <div class="col-sm-4">
+          <li class="item">
+            <a href="#">
+              <%= image_tag "meatpie.jpg" %>
+                <span>オセアニア</span>
+            </a> 
+        </li>
+        </div>
+        <div class="col-sm-4">
+          <li class="item">
+            <a href="#">
+              <%= image_tag "america.jpg" %>
+                <span>北米・中米</span>
+            </a> 
+        </li>
+        </div>
+        <div class="col-sm-4">
+          <li class="item">
+            <a href="#">
+              <%= image_tag "hawai.jpg" %>
+                <span>ハワイ</span>
+            </a> 
+        </li>
+        </div>
+        <div class="col-sm-4">
+          <li class="item">
+            <a href="#">
+              <%= image_tag "mexican.jpg" %>
+                <span>南米</span>
+            </a> 
+        </li>
+        </div>
+        <div class="col-sm-4">
+          <li class="item">
+            <a href="#">
+              <%= image_tag "kebab.jpg" %>
+                <span>中東</span>
+            </a> 
+        </li>
+        </div>
+        <div class="col-sm-4">
+          <li class="item">
+            <a href="#">
+              <%= image_tag "kuskus.jpg" %>
+                <span>アフリカ</span>
+            </a> 
+          </li>
+        </div>
+    </div>
+  </body>
+</html>
