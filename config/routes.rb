@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+  get 'areas/index'
   devise_for :users
-  root to: "posts#index"
-  resources :posts, only: :index do
+  root to: "areas#index"
+  resources :areas, only: :index do
      collection do
        get 'find'
      end
