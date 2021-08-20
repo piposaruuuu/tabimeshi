@@ -7,4 +7,6 @@ Rails.application.routes.draw do
        get 'find'
      end
   end
+  resources :posts, only: [:index, :new] do
+  end
 end
