@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="area.css">
+    <link rel="stylesheet" href="find.css">
     <title>旅めし</title>
   </head>
   <body>
@@ -12,8 +12,13 @@
       </div>
       <div class="navbar">
         <ul class="nav-lists">
-          <li>ログイン</li>
-          <li>ログアウト</li>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.nickname, "#", class: "nav-item" %></li> 
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-item" %></li> 
+          <% else %>
+            <li><%= link_to 'ログイン', new_user_session_path, class: "nav-item" %></li>
+            <li><%= link_to '新規登録', new_user_registration_path, class: "nav-item" %></li>
+          <% end %>
         </ul>
       </div>
     </header>
@@ -23,7 +28,7 @@
       <div class="row">
         <div class="col-sm-4">
           <li class="item">
-           <%= link_to image_tag("thai.jpg", class:"btn"), "#" %>
+           <%= link_to image_tag("thai.jpg", class:"btn"), posts_path %>
               <span>アジア</span>
           </a> 
         </li>
