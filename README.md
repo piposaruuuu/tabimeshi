@@ -19,6 +19,7 @@
 | ---------------- | ---------- | ------------------------------ |
 | restaurant_name  | string     | null: false                    |
 | country          | string     | null: false                    |
+| meal_name        | string     | null: false                    |
 | price_id         | integer    | null: false                    |
 | time_period_id   | integer    | null: false                    |
 | genre_id         | integer    | null: false                    |
