@@ -1,10 +1,10 @@
 <div class="items-sell-contents"> 
   <div class="posts-sell-main">
       <h2 class="posts-sell-title">旅めし情報を入力</h2>
-      <%= form_with local: true do |f| %>
+      <%= form_with model: @post,url: posts_path,local: true do |f| %>
 
       <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-      <%# render 'shared/error_messages', model: f.object %>
+      <%= render 'shared/error_messages', model: f.object %>
       <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
       <%# 料理画像 %>
@@ -17,7 +17,7 @@
           <p>
             クリックしてファイルをアップロード
           </p>
-          <%= f.file_field :hoge, id:"post-image" %>
+          <%= f.file_field :image, id:"post-image" %>
         </div>
       </div>
       <%# /商品画像 %>
@@ -27,13 +27,13 @@
           料理名
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"posts-text", id:"post-name", placeholder:"料理名（必須 )", maxlength:"40" %>
+        <%= f.text_area :meal_name, class:"posts-text", id:"post-name", placeholder:"料理名（必須 )", maxlength:"40" %>
         <div class="posts-explain">
           <div class="weight-bold-text">
             旅めし情報
             <span class="indispensable">必須</span>
           </div>
-          <%= f.text_area :hoge, class:"posts-text", id:"post-info", placeholder:"料理の説明（必須 1,000文字まで）（味、見た目、おすすめ理由など)" ,rows:"7" ,maxlength:"1000" %>
+          <%= f.text_area :text, class:"posts-text", id:"post-info", placeholder:"料理の説明（必須 1,000文字まで）（味、見た目、おすすめ理由など)" ,rows:"7" ,maxlength:"1000" %>
         </div>
       </div>
       <%# /商品名と商品説明 %>
@@ -46,34 +46,34 @@
           国
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"posts-text", id:"country-name", placeholder:"国名（必須)", maxlength:"40" %>
+        <%= f.text_area :country, class:"posts-text", id:"country-name", placeholder:"国名（必須)", maxlength:"40" %>
         <div class="weight-bold-text">
           店名
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"posts-text", id:"restaurant-name", placeholder:"店名（必須)", maxlength:"40" %>
+        <%= f.text_area :restaurant_name, class:"posts-text", id:"restaurant-name", placeholder:"店名（必須)", maxlength:"40" %>
 
 
           <div class="weight-bold-text">
             ジャンル
             <span class="indispensable">必須</span>
           </div>
-          <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"post-category"}) %>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"post-category"}) %>
           <div class="weight-bold-text">
             価格帯
             <span class="indispensable">必須</span>
           </div>
-          <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"post-sales-status"}) %>
+          <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"post-sales-status"}) %>
          <div class="weight-bold-text">
             ご利用人数
             <span class="indispensable">必須</span>
           </div>
-          <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"post-sales-status"}) %>
+          <%= f.collection_select(:person_number_id, PersonNumber.all, :id, :name, {}, {class:"select-box", id:"post-sales-status"}) %>
           <div class="weight-bold-text">
             ご利用時間帯
             <span class="indispensable">必須</span>
           </div>
-          <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"post-sales-status"}) %>
+          <%= f.collection_select(:time_period_id, TimePeriod.all, :id, :name, {}, {class:"select-box", id:"post-sales-status"}) %>
         </div>
       </div>
       <%# /お店の詳細 %>
