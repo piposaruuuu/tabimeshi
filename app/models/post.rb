@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   has_many  :comments
-  belong_to :user
+  belongs_to :user
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
