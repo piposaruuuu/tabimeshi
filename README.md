@@ -18,11 +18,12 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | restaurant_name  | string     | null: false                    |
-| address          | string     | null: false                    |
-| station          | string     |                                |
+| country          | string     | null: false                    |
+| meal_name        | string     | null: false                    |
+| price_id         | integer    | null: false                    |
 | time_period_id   | integer    | null: false                    |
-| genre            | integer    | null: false                    |
-| count            | integer    | null: false                    |
+| genre_id         | integer    | null: false                    |
+| person_number_id | integer    | null: false                    |
 | text             | text       | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
