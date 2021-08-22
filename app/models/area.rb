@@ -11,4 +11,4 @@ class Area < ActiveHash::Base
     { id: 9, name: '中東' },
     { id: 10, name: 'アフリカ' }
   ]
-  end
+end
