@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
-  before_action :move_to_index, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :new, :create]
   def index
     @posts = Post.includes(:user).order('created_at DESC')
   end
@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+     @post = Post.find(params[:id])
   end
 
   private

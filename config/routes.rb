@@ -7,6 +7,6 @@ Rails.application.routes.draw do
        get 'find'
      end
   end
-  resources :posts, only: [:index, :new, :create] do
+  resources :posts, only: [:index, :new, :create, :show] do
   end
 end
