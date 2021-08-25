@@ -15,17 +15,18 @@
 
 ## posts テーブル
 
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| restaurant_name  | string     | null: false                    |
-| country          | string     | null: false                    |
-| meal_name        | string     | null: false                    |
-| price_id         | integer    | null: false                    |
-| time_period_id   | integer    | null: false                    |
-| genre_id         | integer    | null: false                    |
-| person_number_id | integer    | null: false                    |
-| text             | text       | null: false                    |
-| user             | references | null: false, foreign_key: true |
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| restaurant_name   | string     | null: false                    |
+| country           | string     | null: false                    |
+| meal_name         | string     | null: false                    |
+| price_id          | integer    | null: false                    |
+| time_period_id    | integer    | null: false                    |
+| genre_id          | integer    | null: false                    |
+| person_number_id  | integer    | null: false                    |
+| area_id           | integer    | null: false                    |
+| text              | text       | null: false                    |
+| user              | references | null: false, foreign_key: true |
 
 ### Association
 

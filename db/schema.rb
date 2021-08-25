@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2021_08_21_080602) do
     t.integer "genre_id", null: false
     t.integer "person_number_id", null: false
     t.string "country", null: false
+    t.integer "area_id", null: false
+    t.string "address"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
