@@ -1,13 +1,10 @@
 <div class="items-sell-contents"> 
   <div class="posts-sell-main">
       <h2 class="posts-sell-title">旅めし情報を入力</h2>
-      <%= form_with model: @post,url: posts_path,local: true do |f| %>
+      <%= form_with model: [@area, @post], url: area_posts_path,local: true do |f| %>
 
-      <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
       <%= render 'shared/error_messages', model: f.object %>
-      <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
-      <%# 料理画像 %>
       <div class="img-upload">
         <div class="weight-bold-text">
           料理画像
@@ -20,8 +17,7 @@
           <%= f.file_field :image, id:"post-image" %>
         </div>
       </div>
-      <%# /商品画像 %>
-      <%# 商品名と商品説明 %>
+     
       <div class="new-posts">
         <div class="weight-bold-text">
           料理名
@@ -36,9 +32,7 @@
           <%= f.text_area :text, class:"posts-text", id:"post-info", placeholder:"料理の説明（必須 1,000文字まで）（味、見た目、おすすめ理由など)" ,rows:"7" ,maxlength:"1000" %>
         </div>
       </div>
-      <%# /商品名と商品説明 %>
-
-      <%# お店の詳細 %>
+     
       <div class="posts-detail">
         <div class="weight-bold-text">お店情報</div>
         <div class="form">
@@ -74,18 +68,22 @@
             <span class="indispensable">必須</span>
           </div>
           <%= f.collection_select(:time_period_id, TimePeriod.all, :id, :name, {}, {class:"select-box", id:"post-sales-status"}) %>
+        <div class="weight-bold-text">
+          住所
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :address, class:"posts-text", id:"address", placeholder:"住所（任意)", maxlength:"40" %>
         </div>
       </div>
-      <%# /お店の詳細 %>
-    
-      <%# 下部ボタン %>
+      
       <div class="post-btn-contents">
         <%= f.submit "投稿する" ,class:"posts-btn" %>
-        <%=link_to 'もどる', root_path, class:"back-btn" %>
+        <%=link_to 'もどる', area_posts_path(@area.id), class:"back-btn" %>
       </div>
-      <%# /下部ボタン %>
     </div>
     <% end %>
 
   
 </div>
+
+

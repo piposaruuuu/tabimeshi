@@ -22,7 +22,7 @@
       <%= link_to "削除", "#", method: :delete, class:"post-destroy" %>
 
     <% end %>
-    <%= link_to "戻る",  posts_path,class:"post-red-btn"%>
+    <%= link_to "戻る",  area_posts_path,class:"post-red-btn"%>
 
     <div class="post-explain-box">
       <span><%= @post.text %></span>
@@ -45,9 +45,15 @@
           <th class="detail-post">ご利用時間帯</th>
           <td class="detail-value"><%= @post.time_period.name %></td>
         </tr>
+        <tr>
+          <th class="detail-post">住所</th>
+          <td class="detail-value" id="address"><%= @post.address %></td>
+        </tr>
       </tbody>
     </table>
   </div>
+
+  <%= render "shared/map_show" %>
 
   <div class="comment-box">
     <form>
@@ -64,3 +70,4 @@
     </form>
   </div>
 </div>
+<%= render "shared/map_show" %>
