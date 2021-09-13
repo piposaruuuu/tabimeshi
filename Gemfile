@@ -66,3 +66,4 @@ gem "gon"
 gem "dotenv-rails"
 gem 'pry-rails'
 gem "gretel"
+gem 'rails-i18n'
